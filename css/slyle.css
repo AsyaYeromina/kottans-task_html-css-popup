@@ -87,7 +87,7 @@ img {
 
 .nav-list__item {
   padding: 0 10px;
-
+  position: relative;
 }
 
 .nav-list__item-link, .popup-list__item-link{
@@ -95,11 +95,11 @@ img {
   color: inherit;
   padding: 10px;
   display: inline-block;
-  letter-spacing: 0.1em;
 }
 
 .nav-list__item-link {
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .nav-list__popup {
@@ -130,5 +130,62 @@ img {
 }
 
 .nav-list__checkbox:checked ~ .nav-list__popup {
+  display: flex;
+  flex-flow: nowrap column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 120%;
+  transform: translateX(-50%);
+  /* transition: all 1.5s ease-in 3s; */
+
+  /* ! to fix transition */
+}
+
+.nav-list__checkbox:focus .nav-list__popup-item{
+  outline: 1px solid white;
+}
+
+.nav-list__checkbox:checked ~ .nav-list__popup-item::before {
+  content: " ";
+  position: absolute;
+  z-index: 2;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-bottom: 13px solid rgba(255,255,255,0.9);
   display: block;
+  width: 0;
+  height: 0;
+}
+
+.popup {
+  width: 320px;
+  max-height: 450px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, .1);
+}
+
+.popup-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  width: 100%;
+}
+
+.popup-list__item-icon {
+  display: block;
+  margin: 0 auto;
+}
+
+.popup-list__item-name {
+  display: block;
+  padding: 20px 0;
+  text-align: center;
+  line-break: anywhere;
 }
