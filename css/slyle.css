@@ -58,15 +58,12 @@ img {
 
 /* svg sprite hiding */
 .hidden {
-
+  display: none;
 }
 
 .header {
   min-height: 50px;
   padding: 14px;
-  border-bottom: 1px solid lightslategray;
-
-  /* !temporary border */
 }
 
 .nav {
@@ -78,6 +75,7 @@ img {
 .nav-list {
   display: flex;
   flex-flow: wrap row;
+  align-items: center;
 }
 
 .popup-list, .nav-list {
@@ -103,7 +101,8 @@ img {
 }
 
 .nav-list__popup {
-  display: none;
+  position: absolute;
+  z-index: 1;
 }
 
 .nav-list__userpic {
