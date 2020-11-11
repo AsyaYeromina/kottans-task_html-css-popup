@@ -1,5 +1,5 @@
 # kottans-task_html-css-popup
-repo for task 5 of [Kottans frontend course](https://github.com/kottans/frontend)
+repo for [task 5](https://github.com/kottans/frontend/blob/master/tasks/html-css-popup.md) of [Kottans frontend course](https://github.com/kottans/frontend)
 
 --
 
